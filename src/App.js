@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import Navbar from "./components/Navbar";
+import{
+  BrowserRouter as Router,
+  Routes, //Route를 찾는 역할. Route를 찾으면 컴포넌트를 렌더링한다.
+  Route,
+}from "react-router-dom";
+import Home from "./Pages";
+import About from "./Pages";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <Navbar />
+        <Routes>
+            <Route path="/" exact elements={<Home/>}/>
+            <Route path="/explore" exact elements={<About/>}/>
+        </Routes>
+      </Router>
   );
 }
 
