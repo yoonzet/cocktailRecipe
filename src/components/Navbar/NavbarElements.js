@@ -5,17 +5,15 @@ import {
 import {FaBars} from 'react-icons/fa';
 
 export const Nav = styled.nav `
-  background-color:#222;
+  /* background-color:#222; */
   height: 80px;
+  /* position: absolute; */
   display: flex;
   justify-content: start;
   padding: 0.5rem (calc(100vw - 1000px) / 2);
   z-index: 10;
 `
 
-// export const Logo = styled.h1`
-//   color: red;
-// `
 export const NavLink = styled(Link)` 
   color:#999;
   display: flex;
@@ -25,13 +23,13 @@ export const NavLink = styled(Link)`
   cursor: pointer;
 
   &.active, &:hover{
-    color:#fff;
+    color:#555;
   }
 `
 
 export const Bars = styled(FaBars)`
   display: none;
-  color:#fff;
+  color:#555;
 
   @media screen and (max-width:768px){
     display: block;

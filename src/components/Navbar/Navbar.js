@@ -6,7 +6,7 @@ const Navbar = () => {
     <>
       <Nav>
           <NavLink to='/'>
-            <h1 style={{color:'#fff',}}>Yoon Music</h1>
+            <h2 style={{color:'#555', whiteSpace:'nowrap',}}>Cocktail Recipe🍹</h2>
           </NavLink>
 
           <Bars />
@@ -20,11 +20,7 @@ const Navbar = () => {
              </NavLink> 
              <NavLink to='/library' activeStyle>
                  보관함
-             </NavLink> 
-             <NavLink to='/search' activeStyle>
-                 검색
-             </NavLink> 
-             
+             </NavLink>             
           </NavMenu>
           <NavBtn>
           <NavBtnLink to='/signin'>Sign In</NavBtnLink>

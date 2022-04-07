@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = () => {
+const Explore = () => {
   return (
     <div 
        style={{
@@ -9,9 +9,9 @@ const Home = () => {
         alignItems:'center',
         height: '90vh',
     }}>
-        <h1>Home</h1> 
+        <h1>Explore</h1> 
     </div>
   )
 }
 
-export default Home;
+export default Explore;
