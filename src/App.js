@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 import{
   BrowserRouter,
   Routes, //Route를 찾는 역할. Route를 찾으면 컴포넌트를 렌더링한다.

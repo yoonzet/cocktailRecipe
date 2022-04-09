@@ -1,10 +1,11 @@
-import styled from "styled-components";
+import React from 'react';
 import {
   NavLink as Link
 } from "react-router-dom";
+import styled from "styled-components";
 import {FaBars} from 'react-icons/fa';
 
-export const Nav = styled.nav `
+ const Nav = styled.nav `
   /* background-color:#222; */
   height: 80px;
   /* position: absolute; */
@@ -14,7 +15,7 @@ export const Nav = styled.nav `
   z-index: 10;
 `
 
-export const NavLink = styled(Link)` 
+ const NavLink = styled(Link)` 
   color:#999;
   display: flex;
   align-items: center;
@@ -27,7 +28,7 @@ export const NavLink = styled(Link)`
   }
 `
 
-export const Bars = styled(FaBars)`
+ const Bars = styled(FaBars)`
   display: none;
   color:#555;
 
@@ -42,7 +43,7 @@ export const Bars = styled(FaBars)`
   }
 `
 
-export const NavMenu = styled.div `
+ const NavMenu = styled.div `
   display: flex;
   align-items: center;
   width: 100vw;
@@ -53,7 +54,7 @@ export const NavMenu = styled.div `
     display: none ;
   }
 `
-export const NavBtn = styled.nav `
+ const NavBtn = styled.nav `
   display: flex;
   align-items: center;
   margin-right:24px; 
@@ -66,7 +67,7 @@ export const NavBtn = styled.nav `
   }
 `
 
-export const NavBtnLink = styled(Link)`
+ const NavBtnLink = styled(Link)`
   border-radius: 4px;
   background-color:#666;
   padding: 10px 22px;
@@ -83,3 +84,35 @@ export const NavBtnLink = styled(Link)`
     color:#010606;
   }
 `
+
+
+const Navbar = () => {
+  return (
+    <>
+      <Nav>
+          <NavLink to='/'>
+            <h2 style={{color:'#555', whiteSpace:'nowrap',}}>Cocktail Recipe🍹</h2>
+          </NavLink>
+
+          <Bars />
+
+          <NavMenu>
+             <NavLink to='/' activeStyle>
+                 홈
+             </NavLink> 
+             <NavLink to='/explore' activeStyle>
+                 둘러보기
+             </NavLink> 
+             <NavLink to='/library' activeStyle>
+                 보관함
+             </NavLink>             
+          </NavMenu>
+          <NavBtn>
+          <NavBtnLink to='/signin'>Sign In</NavBtnLink>
+          </NavBtn>
+      </Nav>
+    </>
+  )
+}
+
+export default Navbar;
