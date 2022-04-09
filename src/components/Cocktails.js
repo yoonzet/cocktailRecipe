@@ -6,19 +6,22 @@ import { Reset } from 'styled-reset'
 
 const Div = styled.div `
     margin:0 10vw;
+    display: flex;
+    justify-content: center;
   `
 const Ul = styled.ul `
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+
   margin-top: 50px;
 `
 
 const Li = styled.li `
   /* float:  left; */
   /* margin: 0 20px; */
-width: 15vw;
-margin: 20px 1vw;
+width: 18vw;
+margin: 2vw 0.5vw;
 text-align: center;
 `
 
@@ -26,6 +29,13 @@ const Img = styled.img `
   width: 100%;
   border-radius: 10px;
 `
+
+const P = styled.p `
+  font-weight: 700;
+  margin-top: 1vw;
+`
+//---------------------------------------
+
 
 const Cocktails = () => {
   const [cocktails, setUsers] = useState(null);
@@ -39,7 +49,7 @@ const Cocktails = () => {
         setUsers(null);
         setLoading(true);
         const response = await axios.get(
-          'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
+          'https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=Cocktail_glass'
         );
         setUsers(response.data.drinks); 
       } catch (e) {
@@ -62,7 +72,7 @@ const Cocktails = () => {
       {cocktails.map(user => (
         <Li key={user.idDrink}>
                <Img src={user.strDrinkThumb} alt="" />
-               <p>{user.strDrink}</p>            
+               <P>{user.strDrink}</P>            
         </Li>
       ))}
      </Ul> 
