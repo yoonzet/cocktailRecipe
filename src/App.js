@@ -8,6 +8,7 @@ import{
 }from "react-router-dom";
 import Home from "./Pages/Home";
 import Explore from "./Pages/Explore";
+import Category from "./Pages/Category";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
             <Route path="/" exact element={<Home/>}/>
             <Route path="/explore" exact element={<Explore/>}/>
+            <Route path="/category/:strCategory" element={<Category/>}/>
         </Routes>
       </BrowserRouter>
     </>

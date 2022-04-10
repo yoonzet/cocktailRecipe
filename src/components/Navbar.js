@@ -5,6 +5,8 @@ import {
 import styled from "styled-components";
 import {FaBars} from 'react-icons/fa';
 
+//------------------style---------------------
+
  const Nav = styled.nav `
   /* background-color:#222; */
   height: 80px;
@@ -85,6 +87,7 @@ import {FaBars} from 'react-icons/fa';
   }
 `
 
+//------------------component---------------------
 
 const Navbar = () => {
   return (
@@ -97,13 +100,13 @@ const Navbar = () => {
           <Bars />
 
           <NavMenu>
-             <NavLink to='/' activeStyle>
+             <NavLink to='/' active-style="true">
                  홈
              </NavLink> 
-             <NavLink to='/explore' activeStyle>
+             <NavLink to='/explore' active-style="true">
                  둘러보기
              </NavLink> 
-             <NavLink to='/library' activeStyle>
+             <NavLink to='/library' active-style="true">
                  보관함
              </NavLink>             
           </NavMenu>

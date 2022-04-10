@@ -1,16 +1,17 @@
-import React from 'react';
+import React from 'react'
 import Banner from '../components/Banner';
 import CategoryBtn from '../components/CategoryBtn';
 import Cocktails from './Cocktails';
 
-const Home = () => {
+
+function Category() {
   return (
-    <>
+    <div>
      <Banner/>
      <CategoryBtn />
-     <Cocktails/>
-    </>
+     <Cocktails to='/category/Alcoholic'/>
+    </div>
   )
 }
 
-export default Home;
+export default Category;

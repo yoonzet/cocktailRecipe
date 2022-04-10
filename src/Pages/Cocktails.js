@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styled from "styled-components";
-import { Reset } from 'styled-reset'
+import { useParams } from "react-router-dom";
 
+//------------------style---------------------
 
 const Div = styled.div `
-    margin:0 10vw;
+    margin:0 15vw;
     display: flex;
     justify-content: center;
   `
@@ -13,14 +14,12 @@ const Ul = styled.ul `
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
   margin-top: 50px;
-`
+  `
 
 const Li = styled.li `
-  /* float:  left; */
-  /* margin: 0 20px; */
-width: 18vw;
+list-style: none;
+width: 13vw;
 margin: 2vw 0.5vw;
 text-align: center;
 `
@@ -34,24 +33,28 @@ const P = styled.p `
   font-weight: 700;
   margin-top: 1vw;
 `
-//---------------------------------------
 
+//-------------------component--------------------
 
 const Cocktails = () => {
-  const [cocktails, setUsers] = useState(null);
+  const [cocktails, setCocktails] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const listA = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a='
+
+  const strAlcoholic = useParams();
+  const categories = ['Alcoholic','Non Alcoholic','vodka', 'Gin', 'Tequila', 'Rum', '...' ];
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         setError(null);
-        setUsers(null);
+        setCocktails(null);
         setLoading(true);
         const response = await axios.get(
-          'https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=Cocktail_glass'
+          `${listA}Alcoholic`
         );
-        setUsers(response.data.drinks); 
+        setCocktails(response.data.drinks); 
       } catch (e) {
         setError(e);
       }
@@ -67,7 +70,7 @@ const Cocktails = () => {
   return (
     
     <Div>
-        <Reset />
+     
       <Ul>
       {cocktails.map(user => (
         <Li key={user.idDrink}>
