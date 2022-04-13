@@ -1,15 +1,17 @@
-import React from 'react';
-import {
-    Link
-  } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
+import Banner from "./Banner";
+import { CategoryData } from "./CategoryData";
 
-const Div = styled.div`
+//------------------style---------------------
+
+
+const BtnWrap = styled.div`
     margin:40px 15vw;
     display: flex;
     /* justify-content: space-between; */
 `
-const BtnLink = styled(Link)`
+const NavLink = styled(Link)`
     all: unset;
     background-color: #C4C4C4;
     border-radius: 20px;
@@ -18,24 +20,33 @@ const BtnLink = styled(Link)`
     color: #fff;
     font-size:18px;
     white-space: nowrap;
+    cursor: pointer;
 
-    &:hover{
-        background-color: red;
+    &.active, &:hover{
+       background-color: #AEA69B;
     }
 `
+//-------------------component--------------------
 
-
-function CategoryBtn({strCategory}) {
-    const categories = ['Alcoholic','Non Alcoholic','vodka', 'Gin', 'Tequila', 'Rum', '...' ];
-    
+function CategoryBtn() {
 
   return (
-    <Div>
-       {categories.map( (category, index) =>(
-         <BtnLink to={`/category/${category}`} key={index}>{category}</BtnLink>
-       ))}        
-    </Div>
+  <>
+    <BtnWrap>
+       {CategoryData.map( (item, index) =>(         
+         <NavLink 
+         to={item.path} 
+         active-style="true" 
+          key={index}
+         >{item.category}
+         </NavLink> 
+        ))}
+    </BtnWrap>
+    
+  </>
+    
   )
 }
+
 
 export default CategoryBtn;

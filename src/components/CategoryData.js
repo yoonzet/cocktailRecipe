@@ -1,0 +1,31 @@
+export const CategoryData = [
+  {  
+    category:'Popular',
+    path:'/category/popular',
+  },
+  {  
+    category:'Non-Alcoholic',
+    path:'/category/non-Alcoholic',
+  },
+  {  
+    category:'Vodka',
+    path:'/category/vodka',
+  },
+  {  
+    category:'Gin',
+    path:'/category/gin',
+  },
+  {  
+    category:'Tequila',
+    path:'/category/tequila',
+  },
+  {  
+    category:'Rum',
+    path:'/category/rum',
+  }, 
+  {  
+    category:'...',
+    path:'/explore',
+  }, 
+]; 
+
