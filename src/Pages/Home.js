@@ -1,12 +1,12 @@
 import React from 'react';
 import Banner from '../components/Banner';
-import CategoryBtn from '../components/CategoryBtn';
+import Category from '../components/Category';
 
 const Home = () => {
   return (
     <>
      <Banner/>
-     <CategoryBtn />
+     <Category/>
     </>
   )
 }
