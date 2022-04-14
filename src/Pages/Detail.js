@@ -41,7 +41,7 @@ const TitleBg = styled.div`
 const Bold = styled.span`
   font-weight: bold;
   background-color: ${(props =>
-    props.bgColor === null ? 'red' : 'blue')}; 
+    props.bgColor === null ? 'red' : 'orange')}; 
   border-radius: 30px;
   padding: 5px 10px;
   margin: 0 5px;    
