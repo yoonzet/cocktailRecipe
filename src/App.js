@@ -10,8 +10,13 @@ import Home from "./Pages/Home";
 import Explore from "./Pages/Explore";
 import Detail from "./Pages/Detail";
 import SearchBanner from "./components/SearchBanner";
+import styled from "styled-components";
 
-
+const Footer = styled.div`
+  margin-bottom: 3%;
+  text-align: center;
+  font-size: 12px;
+`
 function App() {
   return (
     <>
@@ -24,6 +29,7 @@ function App() {
             <Route path="/detail/:idDrink" exact element={<SearchBanner/>}/>
         </Routes>
       </BrowserRouter>
+      <Footer>2022 Portfolio <br /> yoonzet703@gmail.com / Lee yoonji</Footer>
     </>
     
   );
