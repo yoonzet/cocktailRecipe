@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styled from "styled-components";
 import Cocktails from "./Cocktails";
 import FilterBtn from './FilterBtn';
-import { useGlobalContext } from "../context";
 
 
 const Div=styled.div`
@@ -13,12 +12,6 @@ const Div=styled.div`
   grid-row-gap: 2.5rem;
   padding: 40px 15%;
 ` 
-const Active = styled.div`
-  &.active{
-    /* display: none;
-    background-color: red; */
-  }
-`
 
 function Category() {
   const [popular, setPopular] = useState([]);    
@@ -29,15 +22,10 @@ function Category() {
     fetchPopular();
   },[]);
 
-  // const { cocktailList, loading } = useGlobalContext();
-  // if(cocktailList === null){
-  //   return 'hi';
-  // }
 
   const fetchPopular = async () =>{
     const data = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=m')
     const cocktails = await data.json();
-    // console.log(cocktails);
     setPopular(cocktails.drinks);
     setFiltered(cocktails.drinks);
   };
@@ -52,18 +40,7 @@ function Category() {
       />
       <motion.div layout>
         <AnimatePresence>
-        <Div>  
-         {/* {cocktailList.map((cocktail)=>{
-          return(
-          //   <Cocktails 
-          // key={cocktail.idDrink} 
-          // cocktail={cocktail}
-          // idDrink={cocktail.idDrink}
-          // />
-          )
-                    
-        })}  */}
-         
+        <Div>           
         {filtered.map((cocktail)=>{
           return <Cocktails 
           key={cocktail.idDrink} 

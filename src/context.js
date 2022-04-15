@@ -1,18 +1,17 @@
 import React, { useState, useContext, useEffect } from "react";
-import { useCallback } from "react";
 
 const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   // const [loading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [cocktailList, setCocktails] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("g");
+  const [cocktailSearch, setCocktails] = useState([]);
 
   const fetchDrinks = async () =>{
     const data = await fetch( `${url}${searchTerm}`)
-    const cocktailList = await data.json();
-    setCocktails(cocktailList.drinks);
+    const cocktailSearch = await data.json();
+    setCocktails(cocktailSearch.drinks);
   };
 
   useEffect(() => {
@@ -23,7 +22,7 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         // loading,
-        cocktailList,
+        cocktailSearch,
         setSearchTerm
       }}
     >

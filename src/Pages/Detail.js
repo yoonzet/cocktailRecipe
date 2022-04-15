@@ -48,7 +48,7 @@ const Bold = styled.span`
   margin: 0 5px; 
   color: #605950;
   display:${(props =>
-    props.bgColor === null ? 'none' : '')}; ;
+    props.display === null ? 'none' : '')}; ;
 `
 const P = styled.span`
   margin-bottom: 10px;
@@ -92,9 +92,9 @@ function Detail() {
             <Title>Ingredients</Title>  
             <P><Bold>{cocktail.strIngredient1} </Bold>{cocktail.strMeasure1}</P>    
             <P><Bold>{cocktail.strIngredient2} </Bold>{cocktail.strMeasure2}</P>    
-            <P><Bold bgColor={cocktail.strIngredient3}>{cocktail.strIngredient3} </Bold>{cocktail.strMeasure3}</P>    
-            <P><Bold bgColor={cocktail.strIngredient4}>{cocktail.strIngredient4} </Bold>{cocktail.strMeasure4}</P>    
-            <P><Bold bgColor={cocktail.strIngredient5}>{cocktail.strIngredient5} </Bold>{cocktail.strMeasure5}</P> 
+            <P><Bold display={cocktail.strIngredient3}>{cocktail.strIngredient3} </Bold>{cocktail.strMeasure3}</P>    
+            <P><Bold display={cocktail.strIngredient4}>{cocktail.strIngredient4} </Bold>{cocktail.strMeasure4}</P>    
+            <P><Bold display={cocktail.strIngredient5}>{cocktail.strIngredient5} </Bold>{cocktail.strMeasure5}</P> 
 
             <Title>How to</Title>    
             <p>{cocktail.strInstructions}</p>    

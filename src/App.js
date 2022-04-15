@@ -9,6 +9,7 @@ import{
 import Home from "./Pages/Home";
 import Explore from "./Pages/Explore";
 import Detail from "./Pages/Detail";
+import SearchBanner from "./components/SearchBanner";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" exact element={<Home/>}/>
             <Route path="/explore" exact element={<Explore/>}/>
             <Route path="/detail/:idDrink" exact element={<Detail/>}/>
+            <Route path="/detail/:idDrink" exact element={<SearchBanner/>}/>
         </Routes>
       </BrowserRouter>
     </>

@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import { useGlobalContext } from '../context';
+import SearchList from './SerchList';
 
 //================== style ======================
 
@@ -10,11 +12,15 @@ const ImgWrap = styled.div `
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: 70%;
+  color: #fff;
+`
+const SearchWrap = styled.div `
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: #fff;
+  padding-top: 150px;
 `
 const InputSearch = styled.input `
   all: unset;
@@ -26,21 +32,32 @@ const InputSearch = styled.input `
   box-sizing: border-box;
   margin-top: 20px;
 `
+const Div = styled.div `
+  margin: 50px 30%;  
+`
+const P = styled.span `
+  background-color: #fff9;
+  padding: 5px 20px;
+  border-radius: 20px;
+  color:black;
+  float: left;
+  margin: 10px;
+  cursor: pointer;
+  &:hover{
+    background-color: #fff;
+  }
+`
 //================== component ======================
 
 
 const SearchBanner = () => {
-  const { setSearchTerm , cocktailList} = useGlobalContext();
+  const { setSearchTerm , cocktailSearch} = useGlobalContext();
   const searchValue = React.useRef('');
 
   React.useEffect(()=>{
     searchValue.current.focus();
-  },[]);
+  },[]); 
   
-  if(cocktailList === null){
-    return 'hi';
-  }
-
   const onChange = () =>{
     setSearchTerm(searchValue.current.value);
   };
@@ -49,9 +66,12 @@ const SearchBanner = () => {
   };
 
   return (
+    <>
+    
     <ImgWrap>
-        <h1>어떤 칵테일을 찾으시나요?</h1>
 
+      <SearchWrap>
+        <h1>어떤 칵테일을 찾으시나요?</h1>
         <form onSubmit={handleSubmit}>
           <InputSearch 
           type='text' 
@@ -59,16 +79,24 @@ const SearchBanner = () => {
           ref={searchValue}
           onChange={onChange}/>
         </form>
-        {cocktailList.map((cocktail)=>{          
-          if(cocktailList.length >3 ){
-          return(
+      </SearchWrap>
+      <SearchList />
 
-              <p>{cocktail.strDrink}</p>
-              )
-            }
-                    
-        })} 
+      {/* {cocktailSearch.map((cocktail)=>{          
+        return(
+          <Div>
+            <P><Link style={{
+              textDecoration: 'none', 
+              color: '#444'}} 
+              to={`/detail/${cocktail.idDrink}`}>
+                {cocktail.strDrink}
+                </Link></P> 
+            </Div>
+            )                              
+          })}  */}
+
     </ImgWrap>
+   </>
   )
 }
 
