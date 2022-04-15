@@ -18,6 +18,7 @@ const H2 = styled.h2 `
   font-size: 40px;
   text-align: center;
   margin-bottom: 20px;
+  color: #605950;
 `
 const Div = styled.div `
   width: 30vw;
@@ -31,21 +32,23 @@ const ColorBg = styled.span`
   padding: 5px 10px;
   margin: 0 5px;
 `
-const TitleBg = styled.div`
+const Title = styled.div`
   width: 100%;
-  margin: 50px 0 20px 0;
   font-weight: bold;
   font-size: 18px;
   border-radius: 10px;
+  line-height: 70px;
+  color: #605950;
 `
 const Bold = styled.span`
   font-weight: bold;
-  background-color: ${(props =>
-    props.bgColor === null ? 'red' : 'orange')}; 
+  background-color: #eee; 
   border-radius: 30px;
   padding: 5px 10px;
-  margin: 0 5px;    
-  }
+  margin: 0 5px; 
+  color: #605950;
+  display:${(props =>
+    props.bgColor === null ? 'none' : '')}; ;
 `
 const P = styled.span`
   margin-bottom: 10px;
@@ -86,14 +89,14 @@ function Detail() {
         </div>
            
         <Div>     
-            <TitleBg>Ingredients</TitleBg>  
+            <Title>Ingredients</Title>  
             <P><Bold>{cocktail.strIngredient1} </Bold>{cocktail.strMeasure1}</P>    
             <P><Bold>{cocktail.strIngredient2} </Bold>{cocktail.strMeasure2}</P>    
-            <P><Bold>{cocktail.strIngredient3} </Bold>{cocktail.strMeasure3}</P>    
+            <P><Bold bgColor={cocktail.strIngredient3}>{cocktail.strIngredient3} </Bold>{cocktail.strMeasure3}</P>    
             <P><Bold bgColor={cocktail.strIngredient4}>{cocktail.strIngredient4} </Bold>{cocktail.strMeasure4}</P>    
-            <P><Bold>{cocktail.strIngredient5} </Bold>{cocktail.strMeasure5}</P> 
+            <P><Bold bgColor={cocktail.strIngredient5}>{cocktail.strIngredient5} </Bold>{cocktail.strMeasure5}</P> 
 
-            <TitleBg>How to</TitleBg>    
+            <Title>How to</Title>    
             <p>{cocktail.strInstructions}</p>    
           </Div>                 
     </Container>

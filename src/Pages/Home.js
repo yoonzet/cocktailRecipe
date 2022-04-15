@@ -1,11 +1,13 @@
 import React from 'react';
-import Banner from '../components/Banner';
 import Category from '../components/Category';
+import CocktailList from '../components/CocktailList';
+import SearchBanner from '../components/SearchBanner';
 
 const Home = () => {
   return (
     <>
-     <Banner/>
+     <SearchBanner/>
+     <CocktailList/>
      <Category/>
     </>
   )

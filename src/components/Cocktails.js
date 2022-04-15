@@ -9,11 +9,15 @@ const Div = styled.div `
 const Img = styled.img `
   width: 100%;
   border-radius: 10px;
+  transition: 0.2s;
+  &:hover{
+    transform: scale(101%);
+  }
 `
 
 const P = styled.p `
   font-weight: 700;
-  margin-top: 1vw;
+  margin-top: 10px;
   text-align: center;
 `
 
@@ -26,7 +30,8 @@ function Cocktails({cocktail, idDrink}) {
       exit={{opacity:0,}}
       >
         <Div> 
-          <Link to={`/detail/${idDrink}`}>
+          <Link style={{textDecoration: 'none', color: '#444'
+}} to={`/detail/${idDrink}`}>
           <Img src={cocktail.strDrinkThumb} alt="" />
            <P>{cocktail.strDrink}</P>    
             </Link>
