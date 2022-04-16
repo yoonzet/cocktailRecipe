@@ -5,13 +5,13 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   // const [loading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("g");
-  const [cocktailSearch, setCocktails] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("start");
+  const [cocktailSearch, setCocktailSearch] = useState([]);
 
   const fetchDrinks = async () =>{
     const data = await fetch( `${url}${searchTerm}`)
     const cocktailSearch = await data.json();
-    setCocktails(cocktailSearch.drinks);
+    setCocktailSearch(cocktailSearch.drinks);
   };
 
   useEffect(() => {

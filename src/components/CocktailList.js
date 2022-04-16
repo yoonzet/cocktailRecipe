@@ -13,7 +13,7 @@ const Div=styled.div`
   padding: 40px 15%;
 ` 
 
-function Category() {
+function CocktailList() {
   const [popular, setPopular] = useState([]);    
   const [filtered, setFiltered] = useState([]);
   const [activeIngredient, setActiveIngredient] = useState(0);
@@ -31,7 +31,7 @@ function Category() {
   };
 
   return (
-    <div className="Category">
+    <div className="CocktailList">
       <FilterBtn
       popular={popular} 
       setFiltered={setFiltered} 
@@ -56,4 +56,4 @@ function Category() {
   );
 }
 
-export default Category;
+export default CocktailList;

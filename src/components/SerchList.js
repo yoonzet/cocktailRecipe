@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Div = styled.div `
-  margin: 50px 30%; 
+  margin: 50px 20%; 
 `
 const P = styled.span `
   background-color: #fff9;
@@ -18,25 +18,21 @@ const P = styled.span `
     background-color: #fff;
   }
   `
-
-  const Error = styled.h2`
-    text-align: center;
-    margin: 50px;
-  `
-
 const SearchList = () => {
-  const { cocktailSearch} = useGlobalContext();
+  const { searchTerm, cocktailSearch} = useGlobalContext();
 
   if(cocktailSearch === null){
-    return <Error>검색결과가 없습니다.</Error>;
+    return '';
   }
+  // if(searchTerm === 'start'){
+  //   return 'dd';
+  // }
   // if (loading) {
   //   return "Loading";
   // };
   
   return (
     <Div>
-      <Error/>
       {cocktailSearch.map((cocktail)=>{          
         return(
             <P><Link style={{
