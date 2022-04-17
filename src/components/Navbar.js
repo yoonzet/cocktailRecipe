@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   NavLink as Link
 } from "react-router-dom";
 import styled from "styled-components";
-import {FaBars} from 'react-icons/fa';
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
+import { SidebarData } from './navSlideData';
 
 //------------------style---------------------
 
@@ -27,21 +29,6 @@ import {FaBars} from 'react-icons/fa';
 
   &.active, &:hover{
     color:#555;
-  }
-`
-
- const Bars = styled(FaBars)`
-  display: none;
-  color:#555;
-
-  @media screen and (max-width:768px){
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
-    font-size:1.8rem;
-    cursor: pointer;
   }
 `
 
@@ -86,10 +73,33 @@ import {FaBars} from 'react-icons/fa';
     color:#010606;
   }
 `
+//사이드바 스타일
+const BarIcon = styled(FaIcons)`
+display: none;
+color:#555;
+
+@media screen and (max-width:768px){
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-100%, 75%);
+  font-size:1.8rem;
+  cursor: pointer;
+}
+`
+const UlItems = styled.ul`
+`
+const LiToggle = styled.li`
+`
+// const UlItems = styled.ul`
+// `
 
 //------------------component---------------------
 
 const Navbar = () => {
+  const [sidebar, setSidebar] = useState(false);
+  const showSidebar = () => setSidebar(!sidebar);
   return (
     <>
       <Nav>
@@ -97,7 +107,23 @@ const Navbar = () => {
             <h2 style={{color:'#555', whiteSpace:'nowrap',}}>Cocktail Recipe🍹</h2>
           </NavLink>
 
-          <Bars />
+          <FaIcons.FaBars onClick={showSidebar}/>
+          <nav> 
+            <UlItems>
+              <LiToggle>
+                <Link to='#'>
+                  <AiIcons.AiOutlineClose />
+                </Link>
+              </LiToggle>
+              {SidebarData.map((item, index)=>{
+                return (
+                  <li key={index} >
+                    <p>{item.title}</p>
+                  </li>
+                )
+              })}
+            </UlItems>
+          </nav>
 
           <NavMenu>
              <NavLink to='/' active-style="true">
