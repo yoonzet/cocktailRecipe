@@ -52,7 +52,7 @@ const P = styled.span `
 
 
 const SearchBanner = () => {
-  const { setSearchTerm , cocktailSearch} = useGlobalContext();
+  const { setSearchTerm } = useGlobalContext();
   const searchValue = React.useRef('');
 
   React.useEffect(()=>{
@@ -71,8 +71,8 @@ const SearchBanner = () => {
     
     <ImgWrap>
       <motion.div
-      initial={{ y:0, opacity: 0 , duration: 0.5}}
-      animate={{ y: 30 ,opacity: 1, duration: 0.5}}
+      initial={{ y:0, opacity: 0}}
+      animate={{ y: 30 ,opacity: 1}}
       transition={{ duration: 0.7 }}
       exit={{ opacity: 0 }}
 

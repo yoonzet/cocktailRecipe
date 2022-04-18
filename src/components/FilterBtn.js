@@ -25,10 +25,6 @@ const Button = styled.button`
     color: white;
   }
 `
-// button.active{
-//   background-color: rgb(65, 98, 168);
-//   color: white;
-// }
 
 function FilterBtn({setActiveIngredient, activeIngredient, setFiltered, popular}) {   
     useEffect(()=>{

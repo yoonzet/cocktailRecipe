@@ -19,18 +19,11 @@ const P = styled.span `
   }
   `
 const SearchList = () => {
-  const { searchTerm, cocktailSearch} = useGlobalContext();
+  const {cocktailSearch} = useGlobalContext();
 
   if(cocktailSearch === null){
     return '';
-  }
-  // if(searchTerm === 'start'){
-  //   return 'dd';
-  // }
-  // if (loading) {
-  //   return "Loading";
-  // };
-  
+  }  
   return (
     <Div>
       {cocktailSearch.map((cocktail)=>{          

@@ -29,7 +29,7 @@ function App() {
             <Route path="/detail/:idDrink" exact element={<SearchBanner/>}/>
         </Routes>
       </BrowserRouter>
-      <Footer>2022 Portfolio <br /> yoonzet703@gmail.com / Lee yoonji</Footer>
+      <Footer>ⓒ2022 Portfolio <br /> yoonzet703@gmail.com / Lee yoonji</Footer>
     </>
     
   );
