@@ -1,25 +1,19 @@
-import React from 'react'
-import { MdExplore } from "react-icons/md";
-import { BsInboxesFill } from "react-icons/bs";
-import * as AiIcons from 'react-icons/ai';
+import React from 'react';
 
 export const SidebarData = [
     {
         title:'홈',
         path:'/',
-        icon:<AiIcons.AiFillHome />,
         cName:'nav-text'
     },
     {
         title:'둘러보기',
-        path:'/',
-        icon:<MdExplore />,
+        path:'/explore',
         cName:'nav-text'
     },
     {
         title:'보관함',
-        path:'/',
-        icon:<BsInboxesFill />,
+        path:'/mybox',
         cName:'nav-text'
     },
 ]

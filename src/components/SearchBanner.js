@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import { useGlobalContext } from '../context';
 import SearchList from './SerchList';
+import { motion, AnimatePresence } from 'framer-motion';
+
 
 //================== style ======================
 
@@ -69,6 +70,13 @@ const SearchBanner = () => {
     <>
     
     <ImgWrap>
+      <motion.div
+      initial={{ y:0, opacity: 0 , duration: 0.5}}
+      animate={{ y: 30 ,opacity: 1, duration: 0.5}}
+      transition={{ duration: 0.7 }}
+      exit={{ opacity: 0 }}
+
+      >
 
       <SearchWrap>
         <h1>어떤 칵테일을 찾으시나요?</h1>
@@ -81,20 +89,7 @@ const SearchBanner = () => {
         </form>
       </SearchWrap>
       <SearchList />
-
-      {/* {cocktailSearch.map((cocktail)=>{          
-        return(
-          <Div>
-            <P><Link style={{
-              textDecoration: 'none', 
-              color: '#444'}} 
-              to={`/detail/${cocktail.idDrink}`}>
-                {cocktail.strDrink}
-                </Link></P> 
-            </Div>
-            )                              
-          })}  */}
-
+    </motion.div>
     </ImgWrap>
    </>
   )
