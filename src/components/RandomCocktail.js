@@ -6,6 +6,8 @@ import {motion} from 'framer-motion';
 // ----------------------style-----------------------
 const Div = styled.div`
   margin-top: 80px;
+  display: flex;
+  justify-content: center;
 `
 const H1 = styled.h1`
  text-align: center;
@@ -47,10 +49,8 @@ const iconOut = keyframes`
   }
 `
 const RandomBox = styled.div`  
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  cursor: pointer;
+  position: relative;
+
   &.active{
     animation: ${iconOut}cubic-bezier(0.550, 0.085, 0.680, 0.530) both;;
   }
@@ -74,6 +74,8 @@ const ClickBefore = styled.div`
   height: 300px;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+
   &.active{
     animation: ${iconOut} 0.5s ease-in both;
   }  
@@ -109,6 +111,7 @@ const ToLink = styled(Link)`
   justify-content: center;
   align-items: center;
   margin-left: 40px;
+  cursor: pointer;
 
 `
 const H2 = styled.h2`
@@ -122,6 +125,7 @@ const GotoRecipe = styled.p`
   border-radius: 20px;
   padding: 5px 20px;
   color:#555;
+
   &:hover{
     background-color: #eee8;
   }
@@ -143,7 +147,7 @@ const RandomCocktail = () => {
   },[]);
 
   const fetchPopular = async () =>{
-    const data = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=h')
+    const data = await fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
     const cocktails = await data.json();
     const randomAry = [Math.floor(Math.random() * cocktails.drinks.length)]
     setRandom(cocktails.drinks[randomAry]);
