@@ -13,6 +13,9 @@ import SearchBanner from "./components/SearchBanner";
 import styled from "styled-components";
 
 const Footer = styled.div`
+  /* height: 100vh; */
+  position: relative;
+  bottom: 0;
   margin-bottom: 3%;
   text-align: center;
   font-size: 12px;
