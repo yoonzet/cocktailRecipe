@@ -24,7 +24,7 @@ function CocktailList() {
 
 
   const fetchPopular = async () =>{
-    const data = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=m')
+    const data = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=w')
     const cocktails = await data.json();
     setPopular(cocktails.drinks);
     setFiltered(cocktails.drinks);

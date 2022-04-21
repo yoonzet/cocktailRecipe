@@ -5,7 +5,7 @@ import styled from "styled-components";
 import LikeBtn from './LikeBtn';
 
 const Div = styled.div `
-  /* max-width: 300px; */
+  max-width: 300px;
   position: relative;
 `
 const Img = styled.img `

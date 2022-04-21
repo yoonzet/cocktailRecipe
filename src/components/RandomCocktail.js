@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, {keyframes} from "styled-components";
 import {motion} from 'framer-motion';
+import LikeBtn from './LikeBtn';
 
 // ----------------------style-----------------------
 const Div = styled.div`
@@ -85,12 +86,19 @@ const ClickBefore = styled.div`
   }
 `
 
+const ImgWrap = styled.div`
+  position: relative;
+`
 const Img = styled.img`
   width: 300px;
   height: 300px;
   border-radius: 20px;
-  background-color: #ddd;
-  
+  background-color: #ddd;  
+`
+const BtnWrap = styled.div `
+  position: absolute;
+  top: 5%;
+  right: 5%;
 `
 
 const RandomWrap = styled.div`
@@ -178,7 +186,14 @@ const RandomCocktail = () => {
           </ClickBefore>
 
         <RandomWrap className={show ? 'active' : ''}>
+          <ImgWrap>
           <Img src={random.strDrinkThumb} alt="" />
+          <BtnWrap>
+            <LikeBtn
+            cocktail={random}
+            idDrink={random.idDrink}/>
+          </BtnWrap>
+            </ImgWrap>
           <ToLink to={`/detail/${random.idDrink}`}>
           <H2>{random.strDrink}</H2>
           <GotoRecipe>레시피 보러가기</GotoRecipe>
