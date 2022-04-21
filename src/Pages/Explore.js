@@ -19,7 +19,7 @@ const H2 = styled.h2`
 `
 const Ingredient = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(5, minmax(250px, 1fr));
   grid-column-gap: 1rem;
   grid-row-gap: 3rem;
   padding: 40px 15%;

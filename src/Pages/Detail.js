@@ -12,10 +12,7 @@ const Container = styled.div `
   line-height: 30px ;
 `
 const LeftWrap = styled.div `
-  /* display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center; */
+  margin: 0 20px;
 `
 const ImgWrap = styled.div `
   position: relative;
@@ -38,7 +35,7 @@ const Name = styled.h2 `
 const RightWrap = styled.div `
   display: flex;
   flex-direction: column;
-  margin: 20px 50px;
+  margin-top:20px;
 `
 const RightBG = styled.div `
   background-color: #eee8;
