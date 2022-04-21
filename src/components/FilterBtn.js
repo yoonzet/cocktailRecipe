@@ -32,7 +32,7 @@ function FilterBtn({setActiveIngredient, activeIngredient, setFiltered, popular}
             setFiltered(popular);
             return;
         }
-        const filtered = popular.filter((cocktail)=>cocktail.strIngredient1.includes(activeIngredient)
+        const filtered = popular.filter((cocktail)=>cocktail.strAlcoholic.includes(activeIngredient)
         );
         setFiltered(filtered);
     },[activeIngredient]);
@@ -44,19 +44,19 @@ function FilterBtn({setActiveIngredient, activeIngredient, setFiltered, popular}
         >Popular</Button>
 
         <Button 
-        className={activeIngredient === 'Vodka' ? 'active' : ''} 
-        onClick={()=> setActiveIngredient("Vodka")}
-        >Vodka</Button>
+        className={activeIngredient === 'Alcoholic' ? 'active' : ''} 
+        onClick={()=> setActiveIngredient("Alcoholic")}
+        >Alcoholic</Button>
 
         <Button 
-        className={activeIngredient === 'Gin' ? 'active' : ''} 
-        onClick={()=> setActiveIngredient('Gin')}
-        >Gin</Button>        
+        className={activeIngredient === 'Non alcoholic' ? 'active' : ''} 
+        onClick={()=> setActiveIngredient('Non alcoholic')}
+        >Non alcoholic</Button>        
         
-        <Button 
+        {/* <Button 
         className={activeIngredient === 'rum' ? 'active' : ''} 
         onClick={()=> setActiveIngredient('rum')}
-        >rum</Button>        
+        >rum</Button>         */}
     </Div>
   )
 }

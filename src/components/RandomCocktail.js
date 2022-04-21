@@ -60,6 +60,7 @@ const P = styled.p`
   text-align: center;
   line-height: 100px;
   animation: ${iconMotion} 2s 1s infinite;  
+  color: #988;
 `
 const Click = styled.p`
   font-size: 20px;
@@ -79,6 +80,9 @@ const ClickBefore = styled.div`
   &.active{
     animation: ${iconOut} 0.5s ease-in both;
   }  
+  &:hover{
+    background-color: #eee8;
+  }
 `
 
 const Img = styled.img`
@@ -151,7 +155,7 @@ const RandomCocktail = () => {
     const cocktails = await data.json();
     const randomAry = [Math.floor(Math.random() * cocktails.drinks.length)]
     setRandom(cocktails.drinks[randomAry]);
-    console.log(randomAry)
+    // console.log(randomAry)
   };  
 
   return (
@@ -168,8 +172,8 @@ const RandomCocktail = () => {
               stiffness: 260,
               damping: 20,
             }}>
-              <P>🍹</P> 
-              <Click>Click!</Click>
+              <P>🍹?</P> 
+              <Click>오늘의 추천 레시피 보기</Click>
             </motion.div>
           </ClickBefore>
 

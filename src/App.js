@@ -12,6 +12,7 @@ import Explore from "./Pages/Explore";
 import Detail from "./Pages/Detail";
 import SearchBanner from "./components/SearchBanner";
 import Category from "./Pages/Category";
+import MyBox from "./Pages/MyBox";
 
 const Footer = styled.div`
   /* height: 100vh; */
@@ -29,6 +30,7 @@ function App() {
         <Routes>
             <Route path="/" exact element={<Home/>}/>
             <Route path="/explore" exact element={<Explore/>}/>
+            <Route path="/mybox" exact element={<MyBox/>}/>
             <Route path="/detail/:idDrink" exact element={<Detail/>}/>
             <Route path="/detail/:idDrink" exact element={<SearchBanner/>}/>
             <Route path="/category/:ingredientName" exact element={<Category/>}/>

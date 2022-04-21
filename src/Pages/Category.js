@@ -13,6 +13,25 @@ const Div=styled.div`
   grid-row-gap: 2.5rem;
   padding: 40px 15%;
 ` 
+const TitleWrap=styled.div`
+    background-color: #eee;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    margin-bottom: 50px;
+` 
+const Img=styled.img`
+  width:250px;
+` 
+const Title=styled.h1`
+    text-align: center;
+    line-height: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #6D6A63;
+` 
 
 
 function Category() {
@@ -27,14 +46,18 @@ function Category() {
       const json = await (
         await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredientName}`)
       ).json();
-      console.log(json);
+      // console.log(json);
       setIngredients(json.drinks);
     };
   return (
     <div>
+            <TitleWrap>
+            <Img src={`https://www.thecocktaildb.com/images/ingredients/${ingredientName}.png`} alt="" />       
+            <Title>Drinks & Cocktails with <br /> {ingredientName}</Title>  
+            </TitleWrap> 
          <motion.div layout>
         <AnimatePresence>
-        <Div>           
+        <Div> 
         {ingredients.map((item)=>{
           return <Cocktails 
           key={item.idDrink} 

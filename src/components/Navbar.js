@@ -12,11 +12,11 @@ import { SidebarData } from './navSlideData';
  const Nav = styled.nav `
   /* background-color:#222; */
   height: 80px;
-  /* position: absolute; */
-  display: flex;
-  justify-content: start;
   padding: 0.5rem (calc(100vw - 1000px) / 2);
   z-index: 10;
+  /* position: fixed; */
+  display: flex;
+  justify-content: start;
 `
 
  const NavLink = styled(Link)` 
@@ -145,7 +145,7 @@ const Navbar = () => {
              <NavLink to='/explore' active-style="true">
                  둘러보기
              </NavLink> 
-             <NavLink to='/library' active-style="true">
+             <NavLink to='/mybox' active-style="true">
                  보관함
              </NavLink>             
           </NavMenu>

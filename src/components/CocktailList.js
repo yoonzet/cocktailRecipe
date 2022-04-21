@@ -48,7 +48,6 @@ function CocktailList() {
           idDrink={cocktail.idDrink}
           />          
         })}          
-        
         </Div>
         </AnimatePresence>
       </motion.div>

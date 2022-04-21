@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import Cocktails from '../components/Cocktails'
 import RandomCocktail from '../components/RandomCocktail'
 
 
-const Div=styled.div`
+const Wrap=styled.div`
   margin-bottom: 10%;
 ` 
 const IgdWrap = styled.div`
@@ -26,11 +27,24 @@ const Ingredient = styled.div`
 `
 const GoLink = styled(Link)`
   all: unset;
-
+  cursor: pointer;
 `
+
+const Div=styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 1rem;
+  grid-row-gap: 2.5rem;
+  padding: 40px 15%;
+` 
+
 const Img = styled.img`
   width: 100%;
   border-radius: 20px;
+  transition: 0.2s;
+  &:hover{
+    transform: scale(101%);
+  }
 `
 const P = styled.p`
   text-align: center;
@@ -42,7 +56,7 @@ const P = styled.p`
 function Explore() {
   const popularAry = ['Vodka','Gin', 'Rum', 'Tequila', 'Kahlua'];
 
-  const [ingredients, setIngredients] = useState([]);
+  const [nonAlcoholic, setIngredients] = useState([]);
   
     useEffect(() => {
       getCocktail();
@@ -57,7 +71,7 @@ function Explore() {
 
 
   return (
-    <Div>
+    <Wrap>
       <RandomCocktail/>
 
       <IgdWrap>
@@ -76,19 +90,18 @@ function Explore() {
 
       <IgdWrap>
         <H2>Non Alcoholic</H2>
-        <Ingredient>
-        {ingredients.map((item)=> {
-              return(
-                  <GoLink to={`/detail/${item.idDrink}`}>
-                <Img src={`${item.strDrinkThumb}`} alt="" />
-                <P>{item.strDrink}</P>          
-                </GoLink>
-              )
-            })}      
-            </Ingredient>
+        <Div>           
+        {nonAlcoholic.map((cocktail)=>{
+          return <Cocktails
+          key={cocktail.idDrink} 
+          cocktail={cocktail}
+          idDrink={cocktail.idDrink}
+          />          
+        })}          
+        </Div>
       </IgdWrap>
 
-    </Div>
+    </Wrap>
   )
 }
 
