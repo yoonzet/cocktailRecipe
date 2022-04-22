@@ -15,11 +15,11 @@ const Btn = styled.button`
   }
 `
 const FaHeartSt = styled(FaHeart)`
-  transition: 0.5s;
+  /* transition: 0.5s;
   &:hover{
     color: deeppink;
     transform: scale(110%);
-  }
+  } */
 `
 
 function LikeBtn({cocktail}) {

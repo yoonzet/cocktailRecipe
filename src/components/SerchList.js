@@ -4,19 +4,32 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Div = styled.div `
-  margin: 50px 20%; 
+  height: 210px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1vh 35vw;
+  padding: 10px 0;
+  overflow:hidden ;
+  opacity: 90%;
+  @media screen and (max-width:900px) {
+    height: 250px;
+    margin: 1vh 5vw; 
+  }
 `
-const P = styled.span `
-  background-color: #fff9;
-  padding: 5px 20px;
+const P = styled.p `
+  max-height: 30px;
+  background-color: #eee;
+  padding: 5px 30px;
   border-radius: 20px;
   color:black;
   float: left;
-  margin: 10px;  
+  margin: 5px;  
   cursor: pointer;
   &:hover{
-    background-color: #fff;
+    background-color: #ddd;
   }
+  
   `
 const SearchList = () => {
   const {cocktailSearch} = useGlobalContext();

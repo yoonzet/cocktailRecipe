@@ -19,7 +19,7 @@ const Img = styled.img `
 const P = styled.p `
   font-weight: 700;
   margin-top: 10px;
-  text-align: center;
+  /* text-align: center; */
 `
 const BtnWrap = styled.div `
   position: absolute;

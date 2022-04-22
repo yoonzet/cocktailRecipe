@@ -9,6 +9,7 @@ const Div = styled.div`
   margin-top: 80px;
   display: flex;
   justify-content: center;
+  align-items: center;
 `
 const H1 = styled.h1`
  text-align: center;
@@ -72,9 +73,10 @@ const Click = styled.p`
 `
 const ClickBefore = styled.div`
   background-color: #eee;
-  width: 500px;
+  /* width: 500px; */
   height: 300px;
   border-radius: 20px;
+  padding: 0 40px;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
     cursor: pointer;
 
@@ -84,6 +86,23 @@ const ClickBefore = styled.div`
   &:hover{
     background-color: #eee8;
   }
+`
+
+const RandomWrap = styled.div`
+  opacity: 0;
+  transition: 1s;
+  transform: scale(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+
+    &.active{
+      opacity: 1;
+      transform: scale(100%);
+      transition-delay: 1s;
+    }
 `
 
 const ImgWrap = styled.div`
@@ -101,21 +120,6 @@ const BtnWrap = styled.div `
   right: 5%;
 `
 
-const RandomWrap = styled.div`
-  opacity: 0;
-  transition: 1s;
-  transform: scale(0);
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 0;
-
-    &.active{
-      opacity: 1;
-      transform: scale(100%);
-      transition-delay: 1s;
-    }
-`
 const ToLink = styled(Link)`
   all: unset;
   display: flex;
@@ -124,6 +128,7 @@ const ToLink = styled(Link)`
   align-items: center;
   margin-left: 40px;
   cursor: pointer;
+  
 
 `
 const H2 = styled.h2`
@@ -137,6 +142,7 @@ const GotoRecipe = styled.p`
   border-radius: 20px;
   padding: 5px 20px;
   color:#555;
+  white-space: nowrap;
 
   &:hover{
     background-color: #eee8;
@@ -187,16 +193,16 @@ const RandomCocktail = () => {
 
         <RandomWrap className={show ? 'active' : ''}>
           <ImgWrap>
-          <Img src={random.strDrinkThumb} alt="" />
-          <BtnWrap>
-            <LikeBtn
-            cocktail={random}
-            idDrink={random.idDrink}/>
-          </BtnWrap>
-            </ImgWrap>
+            <Img src={random.strDrinkThumb} alt="" />
+            <BtnWrap>
+                <LikeBtn
+                cocktail={random}
+                idDrink={random.idDrink}/>
+            </BtnWrap>
+          </ImgWrap>
           <ToLink to={`/detail/${random.idDrink}`}>
-          <H2>{random.strDrink}</H2>
-          <GotoRecipe>레시피 보러가기</GotoRecipe>
+            <H2>{random.strDrink}</H2>
+            <GotoRecipe>레시피 보러가기</GotoRecipe>
           </ToLink>
         </RandomWrap>
         

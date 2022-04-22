@@ -22,6 +22,10 @@ const SearchWrap = styled.div `
   flex-direction: column;
   color: #fff;
   padding-top: 150px;
+  @media screen and (max-width:900px) {
+    padding-top: 50px;
+
+  }
 `
 const InputSearch = styled.input `
   all: unset;
@@ -32,21 +36,6 @@ const InputSearch = styled.input `
   padding-left: 20px;
   box-sizing: border-box;
   margin-top: 20px;
-`
-const Div = styled.div `
-  margin: 50px 30%;  
-`
-const P = styled.span `
-  background-color: #fff9;
-  padding: 5px 20px;
-  border-radius: 20px;
-  color:black;
-  float: left;
-  margin: 10px;
-  cursor: pointer;
-  &:hover{
-    background-color: #fff;
-  }
 `
 //================== component ======================
 
@@ -75,7 +64,6 @@ const SearchBanner = () => {
       animate={{ y: 30 ,opacity: 1}}
       transition={{ duration: 0.7 }}
       exit={{ opacity: 0 }}
-
       >
 
       <SearchWrap>
