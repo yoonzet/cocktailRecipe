@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/cocktailRecipe/static/css/main.c7ec3132.css",
-    "main.js": "/cocktailRecipe/static/js/main.713c3a60.js",
+    "main.js": "/cocktailRecipe/static/js/main.7b7caf5c.js",
     "index.html": "/cocktailRecipe/index.html",
     "main.c7ec3132.css.map": "/cocktailRecipe/static/css/main.c7ec3132.css.map",
-    "main.713c3a60.js.map": "/cocktailRecipe/static/js/main.713c3a60.js.map"
+    "main.7b7caf5c.js.map": "/cocktailRecipe/static/js/main.7b7caf5c.js.map"
   },
   "entrypoints": [
     "static/css/main.c7ec3132.css",
-    "static/js/main.713c3a60.js"
+    "static/js/main.7b7caf5c.js"
   ]
 }
