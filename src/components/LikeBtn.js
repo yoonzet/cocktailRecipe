@@ -44,7 +44,7 @@ function LikeBtn({cocktail}) {
 
   }
 
-  console.log(likeItem)
+  // console.log(likeItem)
   return (
     <Btn onClick={addLikeClick}>{likedItem ? <FaHeartSt /> : <FaRegHeart />}</Btn>
   );
