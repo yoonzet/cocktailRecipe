@@ -5,6 +5,7 @@ import{
   BrowserRouter,
   Routes, //Route를 찾는 역할. Route를 찾으면 컴포넌트를 렌더링한다.
   Route,
+  Router,
 }from "react-router-dom";
 import styled from "styled-components";
 import Home from "./Pages/Home";
@@ -38,7 +39,6 @@ function App() {
       </BrowserRouter>
       <Footer>ⓒ2022 Portfolio <br /> yoonzet703@gmail.com / Lee yoonji</Footer>
     </>
-    
   );
 }
 

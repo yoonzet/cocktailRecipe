@@ -8,9 +8,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     // <Reaact.StrictMode>
     <RecoilRoot>
-      <AppProvider>
-        <App />
-      </AppProvider>
+        <AppProvider>
+          <App />
+        </AppProvider>
     </RecoilRoot>
     // </Reaact.StrictMode>
   );
