@@ -7,11 +7,11 @@ import Cocktails from '../components/Cocktails';
 
 
 const Div=styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-column-gap: 1rem;
-  grid-row-gap: 2.5rem;
-  padding: 40px 15%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 2.5rem;
+    padding: 40px 15%;
 ` 
 const TitleWrap=styled.div`
     background-color: #eee;
@@ -23,14 +23,20 @@ const TitleWrap=styled.div`
     margin-bottom: 50px;
 ` 
 const Img=styled.img`
-  width:250px;
+    width:40vw;
+    max-width: 300px;
 ` 
 const Title=styled.h1`
+    font-size: 30px;
     text-align: center;
-    line-height: 50px;
     font-weight: 800;
     text-transform: uppercase;
     color: #6D6A63;
+    white-space: nowrap;
+
+    @media screen and (max-width:768px) {
+    font-size: 18px;
+  }
 ` 
 
 
@@ -53,7 +59,7 @@ function Category() {
     <div>
             <TitleWrap>
             <Img src={`https://www.thecocktaildb.com/images/ingredients/${ingredientName}.png`} alt="" />       
-            <Title>Drinks & Cocktails with <br /> {ingredientName}</Title>  
+            <Title>Cocktails with <br /> {ingredientName}</Title>  
             </TitleWrap> 
          <motion.div layout>
         <AnimatePresence>

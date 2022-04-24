@@ -12,6 +12,10 @@ const Container = styled.div `
   line-height: 30px ;
 `
 const LeftWrap = styled.div `
+  /* margin: 0 20px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 20px;
 `
 const ImgWrap = styled.div `
@@ -19,10 +23,23 @@ const ImgWrap = styled.div `
   /* background-color: #333; */
 `
 const Img = styled.img `
-  width: 400px;
+  width: 80vw;
+  max-width: 400px;
   border-radius: 20px;
 `
-const BtnWrap = styled.div `
+const CategoryWrap = styled.div`
+  display: flex;
+  justify-content: center;
+`
+const Category = styled.span`
+  background-color: #eee; 
+  border-radius: 30px;
+  padding: 0 1rem;
+  margin: 0.5rem;
+  color: #555;
+`
+
+const LikeBtnWrap = styled.div `
   position: absolute;
   top: 7%;
   right: 10%;
@@ -38,18 +55,13 @@ const RightWrap = styled.div `
   margin-top:20px;
 `
 const RightBG = styled.div `
+  width: 90vw;
+  max-width: 500px;
   background-color: #eee8;
   border-radius: 20px;
-  padding: 20px;
+  padding: 1.5rem;
 `
-const ColorBg = styled.span`
-  width: 250px;
-  background-color: #eee; 
-  border-radius: 30px;
-  padding: 5px 10px;
-  margin: 5px 5px;
-  color: #555;
-`
+
 const Title = styled.div`
   width: 100%;
   font-weight: bold;
@@ -67,6 +79,7 @@ const Bold = styled.span`
   color: #605950;
   display:${(props =>
     props.display === null ? 'none' : '')}; ;
+  
 `
 const P = styled.p`
   max-width: 500px;
@@ -102,15 +115,17 @@ function Detail() {
         <LeftWrap>
           <ImgWrap>
             <Img src={cocktail.strDrinkThumb} alt="" />
-            <BtnWrap>
+            <LikeBtnWrap>
               <LikeBtn 
               cocktail={cocktail}
               idDrink={cocktail.idDrink}/>
-            </BtnWrap>
+            </LikeBtnWrap>
            </ImgWrap>
-          <ColorBg>{cocktail.strAlcoholic}</ColorBg>  
-          {/* <ColorBg>Category: {cocktail.strCategory}</ColorBg> */}
-          <ColorBg>Glass: {cocktail.strGlass}</ColorBg>  
+          <CategoryWrap>
+            <Category>{cocktail.strAlcoholic}</Category>  
+            {/* <Category>Category: {cocktail.strCategory}</Category> */}
+            <Category>Glass: {cocktail.strGlass}</Category>  
+          </CategoryWrap>
         </LeftWrap>
            
         <RightWrap>     

@@ -13,7 +13,7 @@ const Div = styled.div `
   overflow:hidden ;
   opacity: 90%;
   @media screen and (max-width:900px) {
-    height: 250px;
+    height: 170px;
     margin: 1vh 5vw; 
   }
 `

@@ -6,7 +6,7 @@ import LikeBtn from './LikeBtn';
 
 // ----------------------style-----------------------
 const Div = styled.div`
-  margin-top: 80px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,8 +14,7 @@ const Div = styled.div`
 const H1 = styled.h1`
  text-align: center;
  color: #6D6A63;
- font-size: 20px;
- line-height: 100px;
+ font-size: 18px;
 `
 const iconMotion = keyframes`
   0%,100% {
@@ -60,7 +59,6 @@ const RandomBox = styled.div`
 const P = styled.p`
   font-size: 100px;
   text-align: center;
-  line-height: 100px;
   animation: ${iconMotion} 2s 1s infinite;  
   color: #988;
 `
@@ -68,15 +66,16 @@ const Click = styled.p`
   font-size: 20px;
   text-align: center;
   font-weight: bold;
-  line-height: 100px;
   color: #777;
 `
 const ClickBefore = styled.div`
   background-color: #eee;
-  /* width: 500px; */
   height: 300px;
   border-radius: 20px;
-  padding: 0 40px;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
     cursor: pointer;
 

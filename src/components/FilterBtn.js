@@ -10,10 +10,10 @@ const Div = styled.div`
 
 const Button = styled.button`
   all: unset;
-  margin-right: 1rem;
+  margin: 0.5rem;
   min-width: 5rem;
   border-radius: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   background-color:#C4C4C4 ;
   color: #fff;
   text-align: center;

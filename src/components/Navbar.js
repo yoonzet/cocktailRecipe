@@ -10,17 +10,19 @@ import { SidebarData } from './navSlideData';
 //------------------style---------------------
 
  const Nav = styled.nav `
-  /* background-color:#222; */
-  height: 80px;
+  background-color:#222;
+  height: 75px;
+  width: 100%;
   padding: 0.5rem (calc(100vw - 1000px) / 2);
   z-index: 10;
-  /* position: fixed; */
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: start;
 `
 
  const NavLink = styled(Link)` 
-  color:#999;
+  color:#555;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -28,7 +30,7 @@ import { SidebarData } from './navSlideData';
   cursor: pointer;
 
   &.active, &:hover{
-    color:#555;
+    color:#999;
   }
 `
 
@@ -76,7 +78,7 @@ import { SidebarData } from './navSlideData';
 //사이드바 스타일
 const BarsIcon = styled(FaBars)`
 display: none;
-color:#555;
+color:#ddd;
 
 @media screen and (max-width:768px){
   display: block;
@@ -135,7 +137,7 @@ const Navbar = () => {
     <>
       <Nav>
           <NavLink to='/'>
-            <h2 style={{color:'#555', whiteSpace:'nowrap',}}>Cocktail Recipe🍹</h2>
+            <h2 style={{color:'#eee', whiteSpace:'nowrap',}}>Cocktail Recipe🍹</h2>
           </NavLink>
 
           <NavMenu>
