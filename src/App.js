@@ -26,7 +26,7 @@ const Footer = styled.div`
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <BrowserRouter basename="cocktailRecipe">
     <Navbar />
         <Routes>
             <Route path="/*" exact element={<Home/>}/>
@@ -36,8 +36,8 @@ function App() {
             <Route path="/detail/:idDrink" exact element={<SearchBanner/>}/>
             <Route path="/category/:ingredientName" exact element={<Category/>}/>
         </Routes>
-      </BrowserRouter>
       <Footer>ⓒ2022 Portfolio <br /> yoonzet703@gmail.com / Lee yoonji</Footer>
+      </BrowserRouter>
     </>
   );
 }
