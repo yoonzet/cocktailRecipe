@@ -29,7 +29,7 @@ function App() {
     <BrowserRouter>
     <Navbar />
         <Routes>
-            <Route path="/" exact element={<Home/>}/>
+            <Route path="/*" exact element={<Home/>}/>
             <Route path="/explore" exact element={<Explore/>}/>
             <Route path="/mybox" exact element={<MyBox/>}/>
             <Route path="/detail/:idDrink" exact element={<Detail/>}/>
