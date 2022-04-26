@@ -12,6 +12,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.24",
     "axios": "^0.26.1",
+    "firebase": "^9.6.11",
     "framer-motion": "^6.3.0",
     "npx": "^10.2.2",
     "react": "^18.0.0",

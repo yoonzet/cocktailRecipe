@@ -14,6 +14,8 @@ import Detail from "./Pages/Detail";
 import SearchBanner from "./components/SearchBanner";
 import Category from "./Pages/Category";
 import MyBox from "./Pages/MyBox";
+import Auth from "./Pages/Auth";
+import Profile from "./Pages/Profile";
 
 const Footer = styled.div`
   /* height: 100vh; */
@@ -23,11 +25,12 @@ const Footer = styled.div`
   text-align: center;
   font-size: 12px;
 `
-function App() {
+function App({isLoggedIn}) {
   return (
     <>
     <BrowserRouter basename="cocktailRecipe">
     <Navbar />
+    {/* {isLoggedIn && <Navbar/>}   */}
         <Routes>
             <Route path="/*" exact element={<Home/>}/>
             <Route path="/explore/*" exact element={<Explore/>}/>
@@ -35,8 +38,17 @@ function App() {
             <Route path="/detail/:idDrink" exact element={<Detail/>}/>
             <Route path="/detail/:idDrink" exact element={<SearchBanner/>}/>
             <Route path="/category/:ingredientName" exact element={<Category/>}/>
+            <Route path='/auth' exact element={ <Auth/>}/>
+
+{/* 
+            {isLoggedIn ? (                  
+                <Route path='/profile' exact element={<Profile/>}/>   
+            ) : (
+                <Route path='/auth' exact element={ <Auth/>}/>
+            )} */}
+
         </Routes>
-      <Footer>ⓒ2022 Portfolio <br /> yoonzet703@gmail.com / Lee yoonji</Footer>
+      <Footer>&copy;{new Date().getFullYear()}Portfolio <br /> yoonzet703@gmail.com / Lee yoonji</Footer>
       </BrowserRouter>
     </>
   );

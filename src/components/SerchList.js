@@ -22,7 +22,6 @@ const P = styled.p `
   background-color: #eee;
   padding: 5px 30px;
   border-radius: 20px;
-  color:black;
   float: left;
   margin: 5px;  
   cursor: pointer;
