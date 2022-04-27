@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import {
-  NavLink as Link
+  NavLink as Link, useNavigate
 } from "react-router-dom";
 import styled from "styled-components";
 import {FaBars} from 'react-icons/fa';
 import {IoClose} from 'react-icons/io5';
 import { SidebarData } from './navSlideData';
+import { authService } from '../fbase';
+import App from '../App';
+import { useRecoilState } from 'recoil';
+import { loginState } from '../atoms';
 
 //------------------style---------------------
 
@@ -72,8 +76,24 @@ import { SidebarData } from './navSlideData';
   &:hover{
     transition: all 0.2s ease-in-out;
     background-color: #888;
-    color:#010606;
   }
+  &.active{
+    background-color: orange;
+    display: none;
+  }
+  `
+ const LogoutBtn = styled.button`
+  all: unset;
+  color: #666;
+  cursor: pointer;
+
+  &:hover{
+    transition: all 0.2s ease-in-out;
+    color:#999;
+  }
+  &.active{
+    display: none;
+  } 
 `
 //사이드바 스타일
 const BarsIcon = styled(FaBars)`
@@ -133,6 +153,14 @@ const NavText = styled.li`
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
+  const [isLoggedIn, setIsLoggedIn] = useRecoilState(loginState);
+  
+  const navigate = useNavigate();
+  const onLogOutClick = () => {
+      authService.signOut();
+      navigate("/");
+    };
+    console.log(isLoggedIn)
   return (
     <>
       <Nav>
@@ -148,12 +176,15 @@ const Navbar = () => {
                  둘러보기
              </NavLink> 
              <NavLink to='/mybox' active-style="true">
-                 보관함
+                 나의 레시피
              </NavLink>             
           </NavMenu>
           
-          <NavBtn>
-            <NavBtnLink to='/auth'>Sign In</NavBtnLink>
+          <NavBtn>   
+            {isLoggedIn ? 
+            <LogoutBtn onClick={onLogOutClick}>로그아웃</LogoutBtn> :
+            <NavBtnLink to='/auth' >Sign In</NavBtnLink>        
+            }   
           </NavBtn>
 
           <BarsIcon onClick={showSidebar}/>

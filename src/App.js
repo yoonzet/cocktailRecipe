@@ -15,7 +15,6 @@ import SearchBanner from "./components/SearchBanner";
 import Category from "./Pages/Category";
 import MyBox from "./Pages/MyBox";
 import Auth from "./Pages/Auth";
-import Profile from "./Pages/Profile";
 
 const Footer = styled.div`
   /* height: 100vh; */
@@ -30,22 +29,25 @@ function App({isLoggedIn}) {
     <>
     <BrowserRouter basename="cocktailRecipe">
     <Navbar />
-    {/* {isLoggedIn && <Navbar/>}   */}
+    {isLoggedIn && <Navbar/>}  
         <Routes>
             <Route path="/*" exact element={<Home/>}/>
-            <Route path="/explore/*" exact element={<Explore/>}/>
+            <Route path="/explore" exact element={<Explore/>}/>
             <Route path="/mybox" exact element={<MyBox/>}/>
             <Route path="/detail/:idDrink" exact element={<Detail/>}/>
             <Route path="/detail/:idDrink" exact element={<SearchBanner/>}/>
             <Route path="/category/:ingredientName" exact element={<Category/>}/>
-            <Route path='/auth' exact element={ <Auth/>}/>
+            {/* <Route path='/auth' exact element={ <Auth/>}/> */}
 
-{/* 
-            {isLoggedIn ? (                  
-                <Route path='/profile' exact element={<Profile/>}/>   
+
+            {isLoggedIn ? (  
+              <>
+                <Route path='/' exact element={<Home/>}/>   
+              </>                
+
             ) : (
                 <Route path='/auth' exact element={ <Auth/>}/>
-            )} */}
+            )}
 
         </Routes>
       <Footer>&copy;{new Date().getFullYear()}Portfolio <br /> yoonzet703@gmail.com / Lee yoonji</Footer>

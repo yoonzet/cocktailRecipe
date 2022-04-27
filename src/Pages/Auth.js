@@ -37,6 +37,7 @@ const Submit = styled.input`
   color: #fff;
   text-align: center;
   margin: 40px 0;
+  cursor: pointer;
   &:hover{
     background-color: #333;
   }
@@ -61,6 +62,7 @@ const Btn = styled.button`
   color: #fff;
   text-align: center;
   margin: 40px 0;
+  cursor: pointer;
   &:hover{
     background-color: #999;
   }
@@ -68,6 +70,7 @@ const Btn = styled.button`
 const Img = styled.img`
   width: 50px;
   margin-top: 10px;
+  cursor: pointer;
   &:hover{
     transform: scale(102%);
   }
@@ -93,7 +96,7 @@ function Auth() {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      let data
+      let data;
       const auth = getAuth()
       if(newAccount) {
         data = await createUserWithEmailAndPassword(auth, email, password);

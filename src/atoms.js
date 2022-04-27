@@ -22,3 +22,8 @@ export const likeState = atom({
     default:[],
     effects: [localStorageEffect('likeState')],
 });
+
+export const loginState = atom({
+    key:'loginState',
+    default:(false),
+});
