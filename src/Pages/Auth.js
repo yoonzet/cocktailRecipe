@@ -28,6 +28,9 @@ const Input = styled.input`
   padding-left: 20px;
   box-sizing: border-box;
   margin-top: 10px;
+  @media screen and (max-width:768px){
+  width: 250px;
+}
 `
 const Submit = styled.input`
   all: unset;
@@ -41,6 +44,9 @@ const Submit = styled.input`
   &:hover{
     background-color: #333;
   }
+  @media screen and (max-width:768px){
+  width: 250px;
+}
 `
 const BottomWrap = styled.div`
   display: flex;
@@ -53,6 +59,13 @@ const BottomWrap = styled.div`
     width: 500px;
     border: 1px solid #eee;
   }
+  @media screen and (max-width:768px){
+    &::before{
+    content: '';
+    width: 250px;
+    border: 1px solid #eee;
+  }
+}
 `
 const Btn = styled.button`
   all: unset;
@@ -66,6 +79,9 @@ const Btn = styled.button`
   &:hover{
     background-color: #999;
   }
+  @media screen and (max-width:768px){
+  width: 250px;
+}
 `
 const Img = styled.img`
   width: 50px;

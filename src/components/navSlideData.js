@@ -1,4 +1,3 @@
-import React from 'react';
 
 export const SidebarData = [
     {
@@ -12,7 +11,7 @@ export const SidebarData = [
         cName:'nav-text'
     },
     {
-        title:'보관함',
+        title:'나의 레시피',
         path:'/mybox',
         cName:'nav-text'
     },

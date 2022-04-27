@@ -146,6 +146,24 @@ const NavText = styled.li`
   margin: 0 15px;
   cursor: pointer;
 `
+const SideLogout = styled.p`
+  all: unset;
+  font-size: 14px;
+  line-height: 50px;
+  font-weight: bold;
+  margin: 0 30px;
+  color: #555;
+  cursor: pointer;
+`
+const SideSign = styled(Link)`
+  all: unset;
+  font-size: 14px;
+  line-height: 50px;
+  font-weight: bold;
+  margin: 0 30px;
+  color: #555;
+  cursor: pointer;
+`
 
 
 //------------------component---------------------
@@ -200,6 +218,10 @@ const Navbar = () => {
                   </NavLink>
                 )
               })}
+             {isLoggedIn ? 
+            <SideLogout onClick={onLogOutClick}>로그아웃</SideLogout> :
+            <SideSign to='/auth' >Sign In</SideSign>        
+            }  
             </SideWrap>
           </NavSide>
 
