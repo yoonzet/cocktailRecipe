@@ -1,6 +1,8 @@
 import { getAuth, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import React, { useState } from 'react'
+import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
+import { loginState } from '../atoms';
 import { authService } from '../fbase';
 
 const Div = styled.div`
@@ -83,6 +85,11 @@ const Btn = styled.button`
   width: 250px;
 }
 `
+const GuestBtn = styled(Btn)`
+   margin-top: -20px;
+   background-color: cornflowerblue;
+
+`
 const Img = styled.img`
   width: 50px;
   margin-top: 10px;
@@ -101,6 +108,7 @@ function Auth() {
   const [password, setPassword] = useState('');
   const [newAccount, setNewAccount] = useState(false);
   const [error, setError] = useState("");
+
   const onChange = (event) => {
     const {target: {name, value}} = event;
     if(name === "email"){

@@ -77,10 +77,6 @@ import { loginState } from '../atoms';
     transition: all 0.2s ease-in-out;
     background-color: #888;
   }
-  &.active{
-    background-color: orange;
-    display: none;
-  }
   `
  const LogoutBtn = styled.button`
   all: unset;
@@ -178,7 +174,6 @@ const Navbar = () => {
       authService.signOut();
       navigate("/");
     };
-    console.log(isLoggedIn)
   return (
     <>
       <Nav>

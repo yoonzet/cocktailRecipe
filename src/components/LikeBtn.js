@@ -6,20 +6,13 @@ import { likeState } from '../atoms';
 
 const Btn = styled.button`
   all: unset;
-  color: #fff;
+  color: #eee;
   font-size:20px;
   cursor: pointer;
   transition: 0.3s;
   &:hover{
     transform: scale(110%);
   }
-`
-const FaHeartSt = styled(FaHeart)`
-  /* transition: 0.5s;
-  &:hover{
-    color: deeppink;
-    transform: scale(110%);
-  } */
 `
 
 function LikeBtn({cocktail}) {
@@ -44,9 +37,8 @@ function LikeBtn({cocktail}) {
 
   }
 
-  // console.log(likeItem)
   return (
-    <Btn onClick={addLikeClick}>{likedItem ? <FaHeartSt /> : <FaRegHeart />}</Btn>
+    <Btn onClick={addLikeClick}>{likedItem ? <FaHeart /> : <FaRegHeart />}</Btn>
   );
 
 }

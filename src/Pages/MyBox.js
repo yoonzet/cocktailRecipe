@@ -1,9 +1,9 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import { likeState } from '../atoms';
+import { likeState, loginState } from '../atoms';
 import Cocktails from '../components/Cocktails';
 
 
@@ -14,10 +14,19 @@ const Div=styled.div`
   grid-row-gap: 2.5rem;
   padding: 40px 15%;
 ` 
+const BeforeLogin=styled.h2`
+  text-align: center;
+  margin: 20% 0;
+  white-space: nowrap;
+` 
 function MyBox() {
   const likeItem = useRecoilValue(likeState);
+  const [isLoggedIn, setIsLoggedIn] = useRecoilState(loginState);
+
   return (
     <div>
+      {/* {isLoggedIn ?
+      <> */}
       <motion.div layout>
         <AnimatePresence>
         <Div>           
@@ -30,7 +39,10 @@ function MyBox() {
         })}          
         </Div>
         </AnimatePresence>
-      </motion.div>   
+      </motion.div>  
+      {/* </> :
+      <BeforeLogin>로그인 후 이용해주세요</BeforeLogin>
+      }  */}
     </div>
   )
 }

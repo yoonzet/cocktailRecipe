@@ -53,10 +53,6 @@ function FilterBtn({setActiveIngredient, activeIngredient, setFiltered, popular}
         onClick={()=> setActiveIngredient('Non alcoholic')}
         >Non alcoholic</Button>        
         
-        {/* <Button 
-        className={activeIngredient === 'rum' ? 'active' : ''} 
-        onClick={()=> setActiveIngredient('rum')}
-        >rum</Button>         */}
     </Div>
   )
 }
