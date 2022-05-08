@@ -7,6 +7,8 @@ React를 이용해서 만들었으며 API를 활용하여 다양한 칵테일레
 ### 기능구현
 
 ##### 홈
+![홈](https://user-images.githubusercontent.com/90804990/167276888-cf02b077-d650-408c-b4ee-2a4aa27ed2c7.gif)
+![로그인](https://user-images.githubusercontent.com/90804990/167276892-311ea4c3-7746-47db-b573-b6fc95e1d0e5.gif)
 
 - 로그인 기능 구현
   - firebase를 이용하여 로그인및 회원가입 기능 구현했습니다.
@@ -20,6 +22,7 @@ React를 이용해서 만들었으며 API를 활용하여 다양한 칵테일레
   - 토글기능을 이용하여 추가/삭제가 가능합니다.
 
 ##### 둘러보기
+![둘러보기](https://user-images.githubusercontent.com/90804990/167276895-4e8e82c1-fb11-4f74-8773-d71638cb6350.gif)
 
 - 랜덤 칵테일 뽑기
   - 버튼을 누를 시 랜덤으로 칵테일 출력됩니다.
