@@ -39,12 +39,10 @@ const iconMotion = keyframes`
 `
 const iconOut = keyframes`
 0% {
-    -webkit-transform: rotateY(0);
             transform: rotateY(0);
     opacity: 1;
   }
   100% {
-    -webkit-transform: rotateY(-70deg);
             transform: rotateY(-70deg);
     opacity: 0;
   }

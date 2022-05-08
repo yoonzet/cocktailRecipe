@@ -1,12 +1,20 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import React from 'react'
-import { Link } from 'react-router-dom';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import {  useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import { likeState, loginState } from '../atoms';
+import { likeState } from '../atoms';
 import Cocktails from '../components/Cocktails';
 
 
+const H3=styled.h3`
+  margin-bottom: 20%;
+  color: #777;
+  background-color: #eee;
+  padding: 30%;
+  text-align: center;
+  line-height: 30px;
+  white-space: nowrap;
+` 
 const Div=styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -14,19 +22,15 @@ const Div=styled.div`
   grid-row-gap: 2.5rem;
   padding: 40px 15%;
 ` 
-const BeforeLogin=styled.h2`
-  text-align: center;
-  margin: 20% 0;
-  white-space: nowrap;
-` 
 function MyBox() {
   const likeItem = useRecoilValue(likeState);
-  const [isLoggedIn, setIsLoggedIn] = useRecoilState(loginState);
+  console.log(likeItem.length)
 
   return (
-    <div>
-      {/* {isLoggedIn ?
-      <> */}
+    <div> 
+      {likeItem.length === 0 ? (
+      <H3>찜한 레시피가 없습니다.<br />하트를 눌러 추가해보세요</H3>
+      ) : (
       <motion.div layout>
         <AnimatePresence>
         <Div>           
@@ -40,9 +44,8 @@ function MyBox() {
         </Div>
         </AnimatePresence>
       </motion.div>  
-      {/* </> :
-      <BeforeLogin>로그인 후 이용해주세요</BeforeLogin>
-      }  */}
+      )
+      }
     </div>
   )
 }
