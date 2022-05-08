@@ -9,7 +9,7 @@ import Cocktails from '../components/Cocktails';
 const H3=styled.h3`
   margin-bottom: 20%;
   color: #777;
-  background-color: #eee;
+  /* background-color: #eee; */
   padding: 30%;
   text-align: center;
   line-height: 30px;
