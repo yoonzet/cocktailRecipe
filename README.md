@@ -19,7 +19,6 @@ React를 이용해서 만들었으며 API를 활용하여 다양한 칵테일레
   - filter()메서드를 이용해 Alcoholic과 Non Alcoholic 클릭시 필터링이 되는 버튼을 구현했습니다.
 - 찜하기 기능
   - recoil상태관리 라이브러리를 사용하여 찜하기 기능과 로컬 스토리지에 저장이 되도록 하였습니다.
-  - 토글기능을 이용하여 추가/삭제가 가능합니다.  
     
 ![로그인](https://user-images.githubusercontent.com/90804990/167276892-311ea4c3-7746-47db-b573-b6fc95e1d0e5.gif)  
 (상단 이미지 설명: firebase를 이용한 구글계정연동를 보여줍니다.)  
