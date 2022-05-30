@@ -47,7 +47,7 @@ React를 이용해서 만들었으며 API를 활용하여 다양한 칵테일레
 
 > ### 사용한 라이브러리
 
-##### Hooks
+##### Hooks(useState, useEffect)
 
 ##### Router
 
